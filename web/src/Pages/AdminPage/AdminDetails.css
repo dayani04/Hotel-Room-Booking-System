@@ -1,0 +1,161 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+  }
+  
+  .admin-details-container {
+    max-width: 800px;
+    margin: 30px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  h2 {
+    text-align: center;
+    color: #6453e0;
+    margin-bottom: 20px;
+  }
+  
+  /* Edit Form Styles */
+  .edit-form {
+    margin-top: 20px;
+  }
+  
+  .edit-form h3 {
+    text-align: center;
+    margin-bottom: 15px;
+    color: #6453e0;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .form-group label {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 8px;
+    display: block;
+  }
+  
+  .form-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    outline: none;
+  }
+  
+  .form-group input:focus {
+    border-color: #6453e0;
+  }
+  
+  .submit-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #6453e0;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .submit-btn:hover {
+    background-color: #4e42c6;
+  }
+  
+  /* Admin List Styles */
+  .admin-list ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .admin-item {
+    background-color: #f9f9f9;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .admin-info p {
+    margin: 5px 0;
+  }
+  
+  .admin-info {
+    flex-grow: 1;
+  }
+  
+  .edit-btn,
+  .delete-btn {
+    padding: 10px 15px;
+    margin-left: 10px;
+    font-size: 14px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .edit-btn {
+    background-color: #4e42c6;
+    color: white;
+  }
+  
+  .edit-btn:hover {
+    background-color: #3e36a1;
+  }
+  
+  .delete-btn {
+    background-color: #e74c3c;
+    color: white;
+  }
+  
+  .delete-btn:hover {
+    background-color: #c0392b;
+  }
+  
+  /* No Admins Available */
+  p {
+    text-align: center;
+    color: #888;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 600px) {
+    .admin-details-container {
+      padding: 15px;
+      width: 90%;
+    }
+  
+    h2 {
+      font-size: 20px;
+    }
+  
+    .admin-item {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .edit-btn,
+    .delete-btn {
+      width: 100%;
+      margin-top: 10px;
+    }
+  }
+  
