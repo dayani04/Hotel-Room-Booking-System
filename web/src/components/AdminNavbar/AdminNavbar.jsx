@@ -5,7 +5,7 @@ import './AdminNavbar.css';
 function AdminNavbar() {
   return (
     <div>
-      <nav className="navbar navbar-expand-lg" style={{ backgroundColor: '#aba2f0' }}>
+      <nav className="navbar navbar-expand-lg" style={{ backgroundColor: '#cc81bb' }}>
         <div className="container-fluid">
           <a className="navbar-brand" href="#">LUXENEST HOTEL</a>
           <button
@@ -30,9 +30,7 @@ function AdminNavbar() {
               <li className="nav-item">
                 <Link className="nav-link button-link" to="/AdminRoomDetails">Room Details</Link>
               </li>
-              <li className="nav-item">
-                <Link className="nav-link button-link" to="/UserRegister">User Details</Link>
-              </li>
+             
             </ul>
           </div>
         </div>

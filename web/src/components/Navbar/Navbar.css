@@ -1,39 +1,39 @@
 .navbar {
-  background-color: #f8f9fa; 
+  background-color: #f285e0; 
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
 }
 
 .navbar-brand {
   font-size: 1.5rem;
   font-weight: bold;
-  color: #333;
+  color: #970684;
 }
 
 .nav-link {
-  color: #555;
+  color: #aa0584;
   font-weight: 500;
   text-decoration: none;
 }
 
 .nav-link.active {
-  color: #007bff; 
+  color: #810c9c; 
 }
 
 .nav-link:hover {
-  color: #0056b3; 
+  color: #a805ab; 
 }
 
 .button-link {
   background: none;
   border: none;
-  color: #555;
+  color: #b2128a;
   font-weight: 500;
   font-size: 1rem;
   cursor: pointer;
 }
 
 .button-link:hover {
-  color: #0056b3;
+  color: #9b2780;
 }
 
 .button-link:focus {
@@ -55,10 +55,10 @@
 }
 
 .btn-outline-success:hover {
-  background-color: #28a745;
+  background-color: #d191cb;
   color: #fff;
 }
 
 .navbar {
-  background-color: #aba2f0; 
+  background-color: #cc81bb; 
 }

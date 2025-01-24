@@ -104,7 +104,7 @@ function BookingRoom() {
 
           {startDate && endDate && (
             <div className="total-price">
-              <h3>Total Price: ₹{totalPrice}</h3>
+              <h3>Total Price: ${totalPrice}</h3>
             </div>
           )}
 

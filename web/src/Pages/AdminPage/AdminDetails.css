@@ -21,7 +21,7 @@
   
   h2 {
     text-align: center;
-    color: #6453e0;
+    color: #e511ae;
     margin-bottom: 20px;
   }
   
@@ -33,7 +33,7 @@
   .edit-form h3 {
     text-align: center;
     margin-bottom: 15px;
-    color: #6453e0;
+    color: #e511ae;
   }
   
   .form-group {
@@ -57,13 +57,13 @@
   }
   
   .form-group input:focus {
-    border-color: #6453e0;
+    border-color: #e511ae;
   }
   
   .submit-btn {
     width: 100%;
     padding: 12px;
-    background-color: #6453e0;
+    background-color: #e511ae;
     color: white;
     font-size: 16px;
     border: none;
@@ -73,7 +73,7 @@
   }
   
   .submit-btn:hover {
-    background-color: #4e42c6;
+    background-color: #e511ae;
   }
   
   /* Admin List Styles */
@@ -113,12 +113,12 @@
   }
   
   .edit-btn {
-    background-color: #4e42c6;
+    background-color: #e511ae;
     color: white;
   }
   
   .edit-btn:hover {
-    background-color: #3e36a1;
+    background-color: #e511ae;
   }
   
   .delete-btn {

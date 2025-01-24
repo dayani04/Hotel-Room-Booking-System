@@ -142,14 +142,14 @@ const RoomManagement = () => {
   };
 
   const containerStyle = {
-    padding: '20px',
+    padding: '50px',
     maxWidth: '1000px',
     margin: '0 auto',
   };
 
   const buttonStyle = {
     padding: '10px 20px',
-    backgroundColor: '#6453e0',
+    backgroundColor: '#e511ae',
     color: 'white',
     border: 'none',
     cursor: 'pointer',
@@ -197,7 +197,7 @@ const RoomManagement = () => {
   const roomNameStyle = {
     fontSize: '24px',
     fontWeight: 'bold',
-    color: '#6453e0',
+    color: '#e511ae',
     marginBottom: '10px',
   };
 

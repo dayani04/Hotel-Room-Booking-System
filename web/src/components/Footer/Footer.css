@@ -1,8 +1,19 @@
+.btn-social:hover {
+  background-color: #e511ae;
+}
+/* Footer.css */
 
-footer {
-    margin-top: 20px;
-  }
-  footer {
-    background-color: #aba2f0; 
-  }
-    
+/* Set the color for the section titles */
+.footer .section-title {
+  color: #e511ae !important;
+}
+
+/* Optional: Style the social icons with some margin */
+.footer .btn-social {
+  margin-right: 10px;
+}
+
+.footer a {
+  color: #fff !important; /* Ensure the links are white */
+}
+.bg-primary {background-color: #e511ae;}

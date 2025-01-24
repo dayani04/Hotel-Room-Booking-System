@@ -1,4 +1,5 @@
 import React from 'react';
+import '@fortawesome/fontawesome-free/css/all.min.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
@@ -12,6 +13,7 @@ import UserLogin from './Pages/UserPage/UserLogin';
 import AdminDetails from './Pages/AdminPage/AdminDetails';
 import AdminRoomDetails from './Pages/AdminPage/AdminRoomDetails';
 import Footer from './components/Footer/Footer';
+import BookingCancel from './Pages/BookingRoom/BookingCancel';
 
 function App() {
   return (
@@ -27,6 +29,7 @@ function App() {
         <Route path="/UserLogin" element={<UserLogin/>}/>
         <Route path="/AdminDetails" element={<AdminDetails/>}/>
         <Route path="/AdminRoomDetails" element={<AdminRoomDetails/>}/>
+        <Route path="/BookingCancel" element={<BookingCancel/>}/>
         </Routes>
         <Footer/>
       </BrowserRouter>

@@ -5,7 +5,7 @@ import './Navbar.css';
 function Navbar() {
   return (
     <div>
-      <nav className="navbar navbar-expand-lg" style={{ backgroundColor: '#aba2f0' }}>
+      <nav className="navbar navbar-expand-lg" style={{ backgroundColor: '#cc81bb' }}>
         <div className="container-fluid">
           <a className="navbar-brand" href="#">LUXENEST HOTEL</a>
           <button

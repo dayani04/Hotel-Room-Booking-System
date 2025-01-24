@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import Swal from 'sweetalert2';
+import Navbar from '../../components/Navbar/Navbar';
+import { Link } from 'react-router-dom'; // Import Link for navigation
 import './UserLogin.css';
-
 
 function UserLogin() {
   const [loginData, setLoginData] = useState({
@@ -51,36 +52,40 @@ function UserLogin() {
   };
 
   return (
-   
-    <div className="login-container">
-      <h2>User Login</h2>
-      <form onSubmit={handleSubmit} className="login-form">
-        <div className="form-group">
-          <label htmlFor="email">Email</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            value={loginData.email}
-            onChange={handleInputChange}
-            required
-          />
+    <section>
+      <Navbar />
+      <div className="login-container">
+        <h2>User Login</h2>
+        <form onSubmit={handleSubmit} className="login-form">
+          <div className="form-group">
+            <label htmlFor="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              value={loginData.email}
+              onChange={handleInputChange}
+              required
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="password">Password</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              value={loginData.password}
+              onChange={handleInputChange}
+              required
+            />
+          </div>
+          <button type="submit" className="submit-btn">Login</button>
+        </form>
+        <div className="register-link">
+          <p>Not registered? <Link to="/UserRegister">Register here</Link></p>
         </div>
-        <div className="form-group">
-          <label htmlFor="password">Password</label>
-          <input
-            type="password"
-            id="password"
-            name="password"
-            value={loginData.password}
-            onChange={handleInputChange}
-            required
-          />
-        </div>
-        <button type="submit" className="submit-btn">Login</button>
-      </form>
-    </div>
- 
+      </div>
+    </section>
   );
 }
 
