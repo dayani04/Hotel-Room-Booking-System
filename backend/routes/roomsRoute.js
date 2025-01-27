@@ -1,6 +1,9 @@
 const express = require('express');
 const router = express.Router();
 const Room = require('../models/room');
+const multer = require('multer');
+const path = require('path');
+
 
 router.get('/getallrooms', async (req, res) => {
   try {

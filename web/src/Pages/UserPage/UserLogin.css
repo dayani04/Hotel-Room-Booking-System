@@ -9,13 +9,15 @@
     background-color: #f5f5f5;
   }
   
-  .login-container {
+  .UL-login-container {
     max-width: 500px;
-    margin: 50px auto;
+ margin-top: 100px;
+ margin-left: 500px;
     background-color: #fff;
     padding: 40px;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 100px;
 
   }
   

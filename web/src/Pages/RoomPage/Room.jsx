@@ -64,11 +64,13 @@ function Room() {
         ) : (
           rooms.map((room) => (
             <div className="room-card" key={room._id}>
-              <img
-                src={room.imageurls[0] || "https://via.placeholder.com/300"}
-                alt={room.name}
-                className="room-image"
-              />
+<img
+  src={room.imageurls && room.imageurls.length > 0 ? room.imageurls[0] : "https://via.placeholder.com/300"}
+  alt={room.name}
+  className="room-image"
+/>
+
+
               <div className="room-details">
                 <h3 className="room-title">{room.name}</h3>
                 <p className="room-description">{room.description}</p>

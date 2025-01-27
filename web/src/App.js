@@ -15,6 +15,7 @@ import AdminRoomDetails from './Pages/AdminPage/AdminRoomDetails';
 import Footer from './components/Footer/Footer';
 import BookingCancel from './Pages/BookingRoom/BookingCancel';
 
+
 function App() {
   return (
     <div className="App">
@@ -30,6 +31,7 @@ function App() {
         <Route path="/AdminDetails" element={<AdminDetails/>}/>
         <Route path="/AdminRoomDetails" element={<AdminRoomDetails/>}/>
         <Route path="/BookingCancel" element={<BookingCancel/>}/>
+        
         </Routes>
         <Footer/>
       </BrowserRouter>

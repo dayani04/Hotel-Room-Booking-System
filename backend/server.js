@@ -3,12 +3,14 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const bodyParser = require('body-parser');
+const path = require('path'); // Import the path module
 
 const app = express();
 
 // Middleware
 app.use(cors());
 app.use(bodyParser.json());
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 // Database Connection
 mongoose
@@ -21,13 +23,11 @@ const roomsRoute = require('./routes/roomsRoute');
 const userRoutes = require("./routes/userRoutes");
 const adminRoutes = require("./routes/adminRoutes");
 
-
 // Register Routes
 app.use('/api/rooms', roomsRoute);
 app.use("/users", userRoutes);
 app.use("/admins", adminRoutes);
 app.use('/api', adminRoutes);
-
 
 // Start Server
 const PORT = process.env.PORT || 5000;
