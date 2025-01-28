@@ -1,3 +1,4 @@
+// UserLogin.js
 import React, { useState } from 'react';
 import axios from 'axios';
 import Swal from 'sweetalert2';
@@ -23,16 +24,19 @@ function UserLogin() {
     e.preventDefault();
     try {
       const response = await axios.post('http://localhost:5000/users/login', loginData);
-
+  
       if (response.data.success) {
+        localStorage.setItem('userToken', response.data.token);  // Store token
         Swal.fire({
-          title: 'Success!',
-          text: 'Login successful!',
-          icon: 'success',
-          confirmButtonText: 'Okay',
+            title: 'Success!',
+            text: 'Login successful!',
+            icon: 'success',
+            confirmButtonText: 'Okay',
         });
-        window.location.href = '/Room';  
-      } else {
+        window.location.href = '/Room';
+    }
+    
+      else {
         Swal.fire({
           title: 'Error!',
           text: 'Invalid credentials!',
@@ -50,6 +54,7 @@ function UserLogin() {
       console.error('Error logging in:', error);
     }
   };
+  
 
   return (
     <section>

@@ -1,4 +1,7 @@
 const Users = require("../models/userModel");
+const jwt = require("jsonwebtoken");
+
+
 
 // Get all users
 const getAllUsers = async (req, res, next) => {
@@ -104,24 +107,65 @@ const userLogin = async (req, res) => {
     const { email, password } = req.body;
 
     try {
-        // Find the user by email
         const user = await Users.findOne({ email });
 
         if (!user) {
             return res.status(400).json({ message: 'Invalid email or password' });
         }
 
-        // Check if the entered password matches the stored password (plaintext comparison)
+        // Check if password matches
         if (password !== user.password) {
             return res.status(400).json({ message: 'Invalid email or password' });
         }
 
-        // You could send a token or session here (JWT, for example)
-        return res.status(200).json({ success: true, message: 'Login successful' });
+        // Generate a JWT token
+        const token = jwt.sign(
+            { id: user._id, email: user.email, name: user.name }, // Payload
+            process.env.JWT_SECRET, // Secret key
+            { expiresIn: '1h' } // Expiration time
+        );
+
+        return res.status(200).json({
+            success: true,
+            message: 'Login successful',
+            token, // Send the token to the client
+        });
 
     } catch (err) {
         console.error(err);
         res.status(500).json({ message: 'Server error' });
+    }
+};
+const authenticateToken = (req, res, next) => {
+    const token = req.headers['authorization'];
+
+    if (!token) {
+        return res.status(401).json({ message: 'Authorization token missing' });
+    }
+
+    jwt.verify(token, JWT_SECRET, (err, user) => {
+        if (err) {
+            return res.status(403).json({ message: 'Invalid token' });
+        }
+
+        req.user = user;
+        next();
+    });
+};
+const getUserProfile = async (req, res) => {
+    const userId = req.user.userId;  // Access the userId from the token
+
+    try {
+        const user = await Users.findById(userId);
+
+        if (!user) {
+            return res.status(404).json({ message: "User not found" });
+        }
+
+        return res.status(200).json({ user });
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ message: "Error retrieving user profile" });
     }
 };
 
@@ -132,4 +176,6 @@ module.exports = {
     updateUser,
     deleteUser,
     userLogin,
+    authenticateToken,
+    getUserProfile,
 };

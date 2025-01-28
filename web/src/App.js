@@ -14,8 +14,8 @@ import AdminDetails from './Pages/AdminPage/AdminDetails';
 import AdminRoomDetails from './Pages/AdminPage/AdminRoomDetails';
 import Footer from './components/Footer/Footer';
 import BookingCancel from './Pages/BookingRoom/BookingCancel';
-
-
+import RoomDetails from './Pages/RoomPage/RoomDetails';
+import UserProfile from './Pages/UserPage/UserProfile';
 function App() {
   return (
     <div className="App">
@@ -31,7 +31,8 @@ function App() {
         <Route path="/AdminDetails" element={<AdminDetails/>}/>
         <Route path="/AdminRoomDetails" element={<AdminRoomDetails/>}/>
         <Route path="/BookingCancel" element={<BookingCancel/>}/>
-        
+        <Route path="/room-details/:roomId" element={<RoomDetails />} />
+        <Route path="/UserProfile" element={<UserProfile/>} />
         </Routes>
         <Footer/>
       </BrowserRouter>

@@ -11,6 +11,7 @@ const roomSchema = mongoose.Schema(
     status: { type: String, default: 'available' },
     currentbookings: [
       {
+        
         startDate: Date,
         endDate: Date,
         totalPrice: Number,
