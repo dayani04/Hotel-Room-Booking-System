@@ -27,12 +27,7 @@ function Navbar() {
               <li className="nav-item">
                 <Link className="nav-link button-link" to="/AdminLogin">Admin</Link>
               </li>
-              <li className="nav-item">
-                <Link className="nav-link button-link" to="/UserLogin">User</Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link button-link" to="/UserRegister">Register</Link>
-              </li>
+            
             
             </ul>
           </div>

@@ -68,7 +68,7 @@ export default function Carousel() {
                       {val.title}
                     </h1>
                     <a
-                      href="/UserLogin"
+                      href="/Room"
                       className="btn py-md-3 px-md-5 animated slideInRight"
                       style={{
                         backgroundColor: "#e511ae",
