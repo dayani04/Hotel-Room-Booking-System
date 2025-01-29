@@ -55,7 +55,7 @@ function BookingCancel() {
           icon: 'success',
           confirmButtonText: 'OK',
         }).then(() => {
-          setBookings(bookings.filter((booking) => booking._id !== bookingId));  // Remove cancelled booking
+          setBookings(bookings.filter((booking) => booking._id !== bookingId)); 
         });
       }
     } catch (error) {

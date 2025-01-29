@@ -3,7 +3,6 @@ const jwt = require("jsonwebtoken");
 
 
 
-// Get all users
 const getAllUsers = async (req, res, next) => {
     let users;
     try {
@@ -20,7 +19,6 @@ const getAllUsers = async (req, res, next) => {
     return res.status(200).json({ users });
 };
 
-// Add a new user
 const addUser = async (req, res, next) => {
     const { name, email, age, address, password } = req.body;
 
@@ -30,7 +28,7 @@ const addUser = async (req, res, next) => {
 
     let user;
     try {
-        user = new Users({ name, email, age, address, password }); // Use the plaintext password
+        user = new Users({ name, email, age, address, password }); 
         await user.save();
     } catch (err) {
         console.error("Error saving user:", err);
@@ -40,7 +38,7 @@ const addUser = async (req, res, next) => {
     return res.status(201).json({ message: "User added successfully", user });
 };
 
-// Get user by ID
+
 const getUserById = async (req, res, next) => {
     const id = req.params.id;
 
@@ -59,7 +57,7 @@ const getUserById = async (req, res, next) => {
     return res.status(200).json({ user });
 };
 
-// Update user details
+
 const updateUser = async (req, res, next) => {
     const id = req.params.id;
     const { name, email, age, address, password } = req.body;
@@ -68,7 +66,7 @@ const updateUser = async (req, res, next) => {
     try {
         user = await Users.findByIdAndUpdate(
             id,
-            { name, email, age, address, password }, // Use the plaintext password
+            { name, email, age, address, password }, 
             { new: true }
         );
     } catch (err) {
@@ -83,7 +81,7 @@ const updateUser = async (req, res, next) => {
     return res.status(200).json({ message: "User updated successfully", user });
 };
 
-// Delete user
+
 const deleteUser = async (req, res, next) => {
     const id = req.params.id;
 
@@ -102,7 +100,7 @@ const deleteUser = async (req, res, next) => {
     return res.status(200).json({ message: "User deleted successfully", user });
 };
 
-// User login
+
 const userLogin = async (req, res) => {
     const { email, password } = req.body;
 
@@ -113,22 +111,21 @@ const userLogin = async (req, res) => {
             return res.status(400).json({ message: 'Invalid email or password' });
         }
 
-        // Check if password matches
+       
         if (password !== user.password) {
             return res.status(400).json({ message: 'Invalid email or password' });
         }
 
-        // Generate a JWT token
         const token = jwt.sign(
-            { id: user._id, email: user.email, name: user.name }, // Payload
-            process.env.JWT_SECRET, // Secret key
-            { expiresIn: '1h' } // Expiration time
+            { id: user._id, email: user.email, name: user.name }, 
+            process.env.JWT_SECRET, 
+            { expiresIn: '1h' }
         );
 
         return res.status(200).json({
             success: true,
             message: 'Login successful',
-            token, // Send the token to the client
+            token, 
         });
 
     } catch (err) {
@@ -153,7 +150,7 @@ const authenticateToken = (req, res, next) => {
     });
 };
 const getUserProfile = async (req, res) => {
-    const userId = req.user.userId;  // Access the userId from the token
+    const userId = req.user.userId; 
 
     try {
         const user = await Users.findById(userId);

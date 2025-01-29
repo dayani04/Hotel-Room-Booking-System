@@ -91,7 +91,7 @@ const deleteAdmin = async (req, res, next) => {
   return res.status(200).json({ message: "Admin deleted successfully", admin });
 };
 
-// Admin login without password hashing
+
 const adminLogin = async (req, res) => {
     const { email, password } = req.body;
   
@@ -102,7 +102,6 @@ const adminLogin = async (req, res) => {
         return res.status(400).json({ message: 'Invalid email or password' });
       }
   
-      // Check if the provided password matches the stored password
       if (admin.password !== password) {
         return res.status(400).json({ message: 'Invalid email or password' });
       }

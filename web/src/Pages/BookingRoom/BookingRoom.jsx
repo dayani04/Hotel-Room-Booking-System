@@ -100,16 +100,32 @@ function BookingRoom() {
 
   const generatePDF = () => {
     const doc = new jsPDF();
-
+ 
+    doc.setFont("helvetica", "normal");
+    doc.setFontSize(18);
+    doc.setTextColor(0, 0, 0);  
+  
     doc.text("Booking Details", 20, 20);
-    doc.text(`Room Name: ${bookingDetails.roomName}`, 20, 30);
-    doc.text(`Room Type: ${bookingDetails.roomType}`, 20, 40);
-    doc.text(`Start Date: ${bookingDetails.startDate}`, 20, 50);
-    doc.text(`End Date: ${bookingDetails.endDate}`, 20, 60);
-    doc.text(`Total Price: ₹${bookingDetails.totalPrice}`, 20, 70); // Correct currency symbol
 
+    doc.setFontSize(14);
+    doc.text(`Room Name: ${bookingDetails.roomName}`, 20, 40);
+    doc.text(`Room Type: ${bookingDetails.roomType}`, 20, 50);
+    doc.text(`Start Date: ${bookingDetails.startDate}`, 20, 60);
+    doc.text(`End Date: ${bookingDetails.endDate}`, 20, 70);
+    
+    doc.setFont("helvetica", "bold");
+    doc.text(`Total Price: ₹${bookingDetails.totalPrice}`, 20, 80);
+  
+    doc.addPage();
+  
+    doc.setFontSize(10);
+    doc.setTextColor(150, 150, 150); 
+    doc.text("LUXENEST HOTEL", 20, 280);
+    doc.text("Thank you for booking with us!", 20, 290);
+  
     doc.save("booking_details.pdf");
   };
+  
 
   return (
     <section>

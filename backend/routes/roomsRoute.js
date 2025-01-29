@@ -61,7 +61,7 @@ router.post('/book', async (req, res) => {
     const room = await Room.findById(roomId);
     if (!room) return res.status(404).json({ message: 'Room not found' });
 
-    // Check for overlapping bookings
+
     const isBooked = room.currentbookings.some(
       (booking) =>
         (new Date(startDate) >= new Date(booking.startDate) && new Date(startDate) <= new Date(booking.endDate)) ||
@@ -72,7 +72,6 @@ router.post('/book', async (req, res) => {
       return res.status(400).json({ message: 'Room is already booked for the selected dates' });
     }
 
-    // Add new booking
     room.currentbookings.push({
       startDate,
       endDate,
@@ -89,7 +88,7 @@ router.post('/book', async (req, res) => {
 
 router.get('/mybookings', async (req, res) => {
   try {
-    const userId = req.user.id;  // Assuming you have user authentication middleware
+    const userId = req.user.id;  
     const bookings = await Booking.find({ userId });
     res.json({ bookings });
   } catch (error) {
@@ -97,7 +96,7 @@ router.get('/mybookings', async (req, res) => {
   }
 });
 
-// Cancel a booking
+
 router.delete('/cancel/:id', async (req, res) => {
   try {
     const booking = await Booking.findById(req.params.id);
@@ -105,7 +104,6 @@ router.delete('/cancel/:id', async (req, res) => {
       return res.status(404).json({ message: 'Booking not found' });
     }
     
-    // Optionally, update room status to 'available' if you want
     const room = await Room.findById(booking.roomId);
     room.status = 'available';
     await room.save();
